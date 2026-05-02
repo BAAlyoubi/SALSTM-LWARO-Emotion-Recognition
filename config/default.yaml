@@ -1,0 +1,30 @@
+seed: 42
+device: auto
+
+data:
+  num_classes: 7
+  batch_size: 16
+  num_workers: 0
+
+model:
+  hidden_dim: 128
+  num_layers: 1
+  dropout: 0.25
+  bidirectional: true
+
+training:
+  epochs: 30
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  patience: 8
+  output_dir: outputs
+
+search:
+  population_size: 8
+  iterations: 10
+  bounds:
+    hidden_dim: [64, 256]
+    dropout: [0.1, 0.5]
+    learning_rate: [0.0001, 0.003]
+    weight_decay: [0.0, 0.001]
+
